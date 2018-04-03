@@ -1,0 +1,7 @@
+import rolando.*
+
+test "lucha de rolando es 10000" {
+
+	assert.equals(10000,rolando.lucha())
+
+}
