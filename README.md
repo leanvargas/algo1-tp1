@@ -1,5 +1,5 @@
 # Rolando, experto en lucha y hechicería    
-Para esta primera entrega, vamos a modelar a Rolando, el protagonista de un juego de rol de Lucha y Hechicería, ambientado en la época medieval.
+**Para esta primera entrega, vamos a modelar a Rolando, el protagonista de un juego de rol de Lucha y Hechicería, ambientado en la época medieval.**
 
 ![](guerrero.jpg)
 
@@ -12,13 +12,12 @@ El nivel de hechicería de rolando se calcula como un valor base, que es 3, por 
 
 Entonces:
 
-	*nivel de hechicería = (valor base * el poder del hechizo preferido)+ valor de la fuerza oscura*
+	nivel de hechicería = (valor base * el poder del hechizo preferido)+ valor de la fuerza oscura
 
-Donde: 
-
-Los hechizos pueden ser:
+Donde los hechizos pueden ser:
 - Espectro maléfico: su poder viene de la cantidad de letras de su nombre (17). Como es mayor a 15, entonces el hechizo es poderoso 
-- Hechizo básico: su poder es de 10 y no es poderoso
+- Hechizo básico: su poder es de 10 y no es poderoso.
+
 El valor de la fuerza oscura es un cálculo global que afecta a todos (incluído Rolando). Por ahora, la fuerza oscura tiene valor 5, pero puede cambiar a lo largo del tiempo ante determinados sucesos que pasen en el mundo
 
 **Requerimientos:**
@@ -64,6 +63,7 @@ Por otra parte, puede suceder que Rolando en vez de tener un simple hechizo pref
 **Requerimiento:** 
 
 Modelar los nuevos elementos y que todo lo anterior siga funcionando correctamente.
+
 Además:
 1. Saber si Rolando está cargado. Eso significa que tiene mas de 5 elementos. Cómo harías para probarlo?
 2. ¿Qué sucede si el libro de hechizos incluye como hechizo al mismo libro de hechizos?
