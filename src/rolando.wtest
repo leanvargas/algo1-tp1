@@ -1,7 +1,63 @@
 import rolando.*
+import hechizos.*
+import artefactos.*
 
-test "lucha de rolando es 10000" {
-
-	assert.equals(10000,rolando.lucha())
-
+describe "Tests de rolando"{
+	
+	test "El nivel de hechizeria es 35" {
+		rolando.hechizoPreferido(hechizoBasico)
+		
+		assert.equals(35, rolando.nivelHechiceria())
+	}
+	
+	test "Cambiar el hechizo preferido de 'hechizo basico' a 'fuerza oscura'" {
+		rolando.hechizoPreferido(hechizoBasico)
+		rolando.hechizoPreferido(fuerzaOscura)
+		
+		assert.equals(fuerzaOscura, rolando.hechizoPreferido())
+	}
+	
+	test "Rolando se cree poderoso" {
+		rolando.hechizoPreferido(espectroMalefico)
+		
+		assert.that(rolando.seCreePoderoso())
+	}
+	
+	test "Modificar valor base de lucha a 4"{
+		rolando.luchaBase(4)
+		
+		assert.equals(4, rolando.luchaBase())
+	}
+	
+	test "Agregar artefacto 'mascaraOscura' y 'collarDivino' y remover 'mascaraOscura'"{
+		rolando.agregarArtefacto(mascaraOscura)
+		rolando.agregarArtefacto(collarDivino)
+		rolando.eliminarArtefacto(mascaraOscura)
+		
+		assert.equals(#{collarDivino}, rolando.artefactos().asSet())
+	}
+	
+	test "El valor de lucha es 12"{
+		rolando.agregarArtefacto(espadaDelDestino)
+		rolando.agregarArtefacto(collarDivino)
+		rolando.agregarArtefacto(mascaraOscura)
+		
+		collarDivino.perlas(4)
+		
+		assert.equals(12, rolando.valorDeLucha())
+	}
+	
+	test "Tiene mayor habilidad de lucha que nivel de hechiceria"{
+		//42 puntos de lucha
+		rolando.agregarArtefacto(espadaDelDestino)
+		rolando.agregarArtefacto(collarDivino)
+		rolando.agregarArtefacto(mascaraOscura)
+		
+		collarDivino.perlas(34)
+		
+		// 35 puntos de hechiceria
+		rolando.hechizoPreferido(hechizoBasico)
+		
+		assert.that(rolando.valorDeLucha() > rolando.nivelHechiceria())
+	}
 }

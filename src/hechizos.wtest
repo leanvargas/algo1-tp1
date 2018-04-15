@@ -1,0 +1,18 @@
+import hechizos.*
+
+describe "Tests de hechizos"{
+	
+	test "El espectro malefico cambia de nombre a espectro oscuro" {
+		espectroMalefico.nombre("Espectro Oscuro")
+		
+		assert.equals("Espectro Oscuro", espectroMalefico.nombre())
+	}
+	
+	test "Representar un eclipse. Duplica la fuerza oscura"{
+		fuerzaOscura.hayEclipse()
+		
+		assert.equals(10, fuerzaOscura.poder())
+	}
+	
+
+}
